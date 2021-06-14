@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/manifest.webmanifest" />
     <script src="https://kit.fontawesome.com/d624a33192.js" crossorigin="anonymous"></script>
     <title>WEB SOLUTION</title>
 </head>
@@ -346,15 +346,8 @@
         x[slideIndex-1].style.display = "block";
         }
 
-        if ('serviceWorker' in navigator) {
-       console.log("Will the service worker register?");
-       navigator.serviceWorker.register('service-worker.js')
-         .then(function(reg){
-           console.log("Yes, it did.");
-        }).catch(function(err) {
-           console.log("No it didn't. This happened:", err)
-       });
-    }
+        // Register Service worker for Add to Home Screen option to work
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/service-worker.js') }
 
       </script>
 </body>
