@@ -8,6 +8,7 @@
     <link rel="manifest" href="/manifest.webmanifest" />
     
     <script src="https://kit.fontawesome.com/d624a33192.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <title>WEB SOLUTION</title>
 </head>
 <body>
@@ -299,6 +300,18 @@
 
         </footer>
     </div>
+    <div id="pwa-alert" class="install-app animate__animated animate__bounceIn">
+        <div>
+          <h1 id="pwa-title">Aggiungi l'app!</h1>
+          <h3 id="pwa-subtitle">Clicca qui per aggiungere il menù alla home del tuo cellulare!</h3>
+  
+          <div>
+            <button id="install" type="button" class="btn btn-dark">OK</button>
+  
+            <button type="button" class="btn btn-outline-dark" onclick="closePwaAlert();">Chiudi</button>
+          </div>
+        </div>
+      </div>
 
     <script>
  var slideIndex = 1;

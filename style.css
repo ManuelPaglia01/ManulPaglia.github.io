@@ -81,6 +81,46 @@ fill: yellowgreen;
     align-content: center;
     text-align: center;
 }
+#pwa-alert {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform-origin: left;
+  }
+  
+  #pwa-alert > div {
+    border: 1px solid black;
+    position: relative;
+    left: -50%;
+  
+    background-color: white;  
+  
+    border-radius: 5px;
+  
+    padding: 15px;
+  
+    width: fit-content;
+  
+    text-align: center;
+  }
+  
+  #pwa-alert > div > h1 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  #pwa-alert > div > h3 {
+    font-size: 15px;
+    opacity: 0.8;
+  }
+  
+  #pwa-alert > div > div {
+    margin-top: 20px;
+  }
+  
+  #pwa-alert > div > div > button {
+    margin: 0 5px;
+  }
 
 .top-box2{
     width: 80%;
