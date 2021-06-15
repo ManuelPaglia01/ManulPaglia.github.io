@@ -1,8 +1,15 @@
+// Register service worker to control making site work offline
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js')
+    .then(() => { console.log('Service Worker Registered'); });
+}
 
 // Code to handle install prompt on desktop
 
 let deferredPrompt;
-const addBtn = document.querySelector('.add-button');
+const addBtn = document.querySelector('.install-app');
 addBtn.style.display = 'none';
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -13,7 +20,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Update UI to notify the user they can add to home screen
   addBtn.style.display = 'block';
 
-  addBtn.addEventListener('click', () => {
+  installBtn = document.querySelector("#install");
+
+  installBtn.addEventListener('click', () => {
     // hide our user interface that shows our A2HS button
     addBtn.style.display = 'none';
     // Show the prompt
@@ -29,3 +38,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
+
+function closePwaAlert() {
+  document.getElementById("pwa-alert").style.display = "none";
+}
