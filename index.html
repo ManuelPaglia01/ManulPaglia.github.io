@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <script src="sw.js"></script>
+        <title>Hello World</title>
+    </head>
+    <body>
+        <!--APPLICATION CONTENT-->
+        <header>
+                <img src="img/CDS.png" alt="">
+          
+
+        </header>
+
+        <main>
+
+            <section class="pages">
+
+                <div class="page is-active" data-page="3">
+                    <div class="cont">
+                        <div class="content page-3">
+                            <div class="titoli">
+                                <h1 style="font-size: 3em;">Login</h1>
+                                <p style="font-size: 1.5em;">Accedi con le tue credenziali</p>
+                            </div>
+                            <div class="spazio-s"></div>
+                            <div class="debito-form">
+                                <form>
+                                    <div class="input-c">
+                                        <input type="text" value="" placeholder="Nome " id="nome_utente" name="nome_utente" required>
+        
+                                    </div>
+
+                                    <div class="spazio"></div>
+                                    <div class="input-c">
+                                        <input type="text" value="" placeholder="Password" id="password" name="password" required>
+                                    </div>
+
+                                    <div class="spazio"></div>
+                                    <div class="invio">
+                                        <a id="accedi" href="applicazione.html">Accedi<a/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--BOTTOM NAVIGATION-BAR-->
+        <div class="tabs" style="background-color: #75b4c7;">
+
+        </div>
+        <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "background_color": "blue",
+  "description": "Un sito di prova PWA",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "CDS DEBITI",
+  "short_name": "CDS",
+  "start_url": "/"
+}
