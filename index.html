@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <title>Hello World</title>
+    </head>
+    <body>
+        <!--APPLICATION CONTENT-->
+        <header>
+                <img src="img/CDS.png" alt="">
+          
+
+        </header>
+
+        <main>
+
+            <section class="pages">
+
+                <div class="page is-active" data-page="3">
+                    <div class="cont">
+                        <div class="content page-3">
+                            <div class="titoli">
+                                <h1 style="font-size: 3em;">Login</h1>
+                                <p style="font-size: 1.5em;">Accedi con le tue credenziali</p>
+                            </div>
+                            <div class="spazio-s"></div>
+                            <div class="debito-form">
+                                <form>
+                                    <div class="input-c">
+                                        <input type="email" placeholder="email " id="email" name="email" required>
+
+        
+                                    </div>
+
+                                    <div class="spazio"></div>
+                                    <div class="input-c">
+                                        <input type="password" placeholder="pasword" id="pasword" name="pasword" required>
+                                    </div>
+
+                                    <div class="spazio"></div>
+                                    <div class="invio">
+                                        <input type="button" value="accedi" id="accedi">
+                                    </div>
+            
+                                    <div class="spazio-s"></div>
+                                    <div class="input-c" style="text-align: center;">
+                                        <p id="response"></p>
+                                    </div>
+                                   
+                                </form>
+                            </div>
+                            <div class="link-reg">
+                                <p>Se non sei registarto clicca <a href="register.html">qui</a></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--BOTTOM NAVIGATION-BAR-->
+        <div class="tabs" style="background-color: #75b4c7;">
+
+        </div>
+        <script src="https://code.jquery.com/jquery-2.1.0.min.js" integrity="sha256-8oQ1OnzE2X9v4gpRVRMb1DWHoPHJilbur1LP9ykQ9H0=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#accedi").on('click', function(){
+                var email = $("#email").val();
+                var pasword = $("#pasword").val();
+                
+                if (email=="" || pasword==""){
+                    alert("inserisci tutti i campi");
+                }else{
+                    console.log("tutto ok");
+                }
+                $.ajax({
+                    url: 'index.php',
+                    method: 'POST',
+                    data: {
+                        login: 1,
+                        emailPHP: email,
+                        paswordPHP: pasword
+                    },
+                    success: function(response){
+                        $("#response").html(response);
+                        console.log(response);
+                    
+                        
+                        if(response=='<h2 style="color: green;">Login effettuato con successo</h2>')
+
+                            setTimeout(function(){
+                                window.location = 'hidden.html';
+                            }, 1000);
+                            
+                            
+                    },
+                    dataType: 'text'
+                });
+            });
+
+        });
+
+        </script>
+
+        <!-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------></script>
+    </body>
+</html>

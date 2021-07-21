@@ -1,0 +1,246 @@
+<?php
+
+session_start();
+
+
+if(!isset($_SESSION['loggedIN'])){
+    header('location.php');
+    exit();
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiyJBFTUtfGE4yz8OpOQJAFkoIsz7VX5U"></script>
+        <title>Hello World</title>
+    </head>
+    <body>
+        <!--APPLICATION CONTENT-->
+        <header>
+            <div class="hdiv-l">
+                <img src="img/CDS.png" alt="">
+            </div>
+            <div class="hdiv-r">
+                <a href="logout.php"><img src="img/svgs/solid/sign-out-alt.svg" alt="" style="width: 30px;"></a>
+            </div>     
+        </header>
+
+        <main>
+
+            <section class="pages">
+                <div class="page is-active" data-page="1">
+                    <div class="cont">
+                        <div class="content">
+
+
+
+                            <h2>Page 1</h2>
+                            <p>Welcome to the home page</p>
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="page" data-page="2">
+                    <div class="cont">
+                        <div class="content">
+                            <div class="audiv">
+                                <a href="#" onclick="audio1.play()">sound-1</a>
+                                <a href="#" onclick="audio2.play()">sound-2</a>
+                            </div>
+                            <div class="audiv">
+                                <a href="#" onclick="audio3.play()">sound-3</a>
+                                <a href="#" onclick="audio4.play()">sound-4</a>
+                            </div>
+                            <div class="audiv">
+                                <a href="#" onclick="audio5.play()">sound-5</a>
+                                <a href="#" onclick="audio6.play()">sound-6</a>
+                            </div>
+                            <div class="audiv">
+                                <a href="#" onclick="audio7.play()">sound-7</a>
+                                <a href="#" onclick="audio8.play()">sound-8</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page" data-page="3">
+                    <div class="cont">
+                        <div class="content page-3 swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="titoli">
+                                        <h1 style="font-size: 3em;">Debiti</h1>
+                                        <p style="font-size: 1.5em;">Inserisci il debitore la data e l'importo</p>
+                                    </div>
+                                    <div class="spazio-s"></div>
+                                    <div class="debito-form">
+                                        <form>
+                                            <div class="input-c">
+                                                <input type="text" value="" placeholder="Nome debitore" id="nome_debitore" name="nome_debitore" required>
+                
+                                            </div>
+        
+                                            <div class="spazio"></div>
+                                            <div class="input-c">
+                                                <input type="number" value="" placeholder="Somma debito" id="somma_debito" name="somma_debito" required>
+                                            </div>
+        
+                                            <div class="spazio"></div>
+                                            <div class="input-c">
+                                                <input type="date" value="" id="data_debito" name="data_debito" required>
+                                            </div>
+                                            
+        
+                                            <div class="spazio"></div>
+                                            <div class="invio">
+                                                <input type="submit" id="submit-but" >
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="titoli">
+                                        <h1 style="font-size: 3em;">Eventi</h1>
+                                        <p style="font-size: 1.5em;">Inserisci il nome la data e una descrizione dell'evento</p>
+                                    </div>
+                                    <div class="spazio-s"></div>
+                                    <div class="debito-form">
+                                        <form>
+                                            <div class="input-c">
+                                                <input type="text" value="" placeholder="Nome evento" id="nome_debitore" name="nome_debitore" required>
+                
+                                            </div>
+
+                                            <div class="spazio"></div>
+                                            <div class="input-c">
+                                                <input type="date" value="" id="data_debito" name="data_debito" required placeholder="Data evento">
+                                            </div>
+                                            
+                                                    
+                                            <div class="spazio"></div>
+                                            <div class="input-c">
+                                                <input type="number" value="" placeholder="Descrizione evento" id="somma_debito" name="somma_debito" required>
+                                            </div>
+        
+                                            <div class="spazio"></div>
+                                            <div class="invio">
+                                                <input type="submit" id="submit-but" >
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="page" data-page="4">
+                    <div class="cont">
+                        <div class="content">
+                            <div id="map">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page" data-page="5">
+                    <div class="cont">
+                        <div class="content">
+                            <h2>Page 5</h2>
+                            <p>Welcome to the contact page</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--BOTTOM NAVIGATION-BAR-->
+        <div class="tabs">
+            <div class="bottom-nav">
+                <div class="section-1">
+                    
+                    <div class="item-nav tab is-active">
+                         <a class="a-flex" data-switcher data-tab="1">
+                            <div class="cimg"><img src="img/svgs/solid/home.svg" alt=""></div>
+                            <div><p>Home</p></div>
+                        </a>
+                            
+                        
+                        
+                    </div>
+                    
+                    <div class="item-nav tab">
+                     <a class="a-flex" data-switcher data-tab="2">
+                        <div class="cimg"><img src="img/svgs/solid/user-friends.svg" alt=""></div>
+                        <div><p>About</p></div>
+                       </a>  
+                    </div>
+
+             
+
+
+                 
+                    <div class="item-nav tab plus-button">
+                         <a class="a-flex" data-switcher data-tab="3">
+                            <div class="cimg"><img src="img/svgs/solid/plus-circle.svg"  alt=""></div>
+                        </a>
+                    </div>
+
+
+         
+                    <div class="item-nav tab">
+                         <a class="a-flex" data-switcher data-tab="4">
+                            <div class="cimg"><img src="img/svgs/solid/info-circle.svg" alt=""></div>
+                            <div><p>Info</p></div>
+                        </a>
+                            
+                        
+                        
+                    </div>
+                    <div class="item-nav tab">
+                         <a class="a-flex" data-switcher data-tab="5">
+                            <div class="cimg"><img src="img/svgs/solid/address-card.svg" alt=""></div>
+                            <div><p>Contact</p></div>
+                        </a>
+                            
+                        
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <script src="js/index.js"></script>
+        <script src="formajax.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="js/slides.js"></script>
+        <script>
+            var audio1= new Audio();
+            audio1.src = "1.mp3";
+            var audio2= new Audio();
+            audio2.src = "2.mp3";
+            var audio3= new Audio();
+            audio3.src = "3.mp3";
+            var audio4= new Audio();
+            audio4.src = "4.mp3";
+            var audio5= new Audio();
+            audio5.src = "5.mp3";
+            var audio6= new Audio();
+            audio6.src = "6.mp3";
+            var audio7= new Audio();
+            audio7.src = "7.mp3";
+            var audio8= new Audio();
+            audio8.src = "8.mp3";
+        </script>
+    </body>
+</html>
